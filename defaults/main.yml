@@ -1,0 +1,13 @@
+---
+# defaults file for sosreport
+
+# A local directory to collect sosreport files to on the controller
+sosreport_local_dir: ~/sosreport
+# A remote directory to output sosreport to on the remote host
+sosreport_remote_dir: /tmp/sosreport
+# Arguments to the sosreport command
+sosreport_args:
+  - --all-logs
+  - --quiet
+  - --batch
+  - --verify

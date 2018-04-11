@@ -1,0 +1,26 @@
+galaxy_info:
+  author: Grzegorz Adamiak
+  description: >
+    Collect sosreport from remote hosts to a local folder on the controller.
+  company: Atos
+
+  issue_tracker_url: https://github.com/gadamiak/sosreport/issues
+
+  license: GPLv3
+
+  min_ansible_version: 2.4
+  platforms:
+  - name: EL
+    versions:
+    - 7
+    - 6
+    - 5
+
+  galaxy_tags:
+    - system
+    - rhel
+    - automation
+    - tools
+    - openstack
+
+dependencies: []
