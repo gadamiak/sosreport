@@ -23,11 +23,16 @@
       {% endif %}
   environment: "{{ sosreport_env|default(omit) }}"
 
-- name: Copy sosreport to {{ sosreport_local_dir }} on the controller
-  synchronize:
-    src: "{{ sosreport_remote_dir }}/"
+- name: Find files to fetch
+  command: ls -1 {{ sosreport_remote_dir }}
+  register: sosreport_files
+
+- name: Fetch files to {{ sosreport_local_dir }} on the controller
+  fetch:
+    src: "{{ sosreport_remote_dir }}/{{ item }}"
     dest: "{{ sosreport_local_dir }}/"
-    mode: pull
+    flat: yes
+  with_items: "{{ sosreport_files.stdout_lines }}"
 
 - name: Remove {{ sosreport_remote_dir }} directory
   file:

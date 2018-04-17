@@ -10,7 +10,6 @@ Requirements
 ------------
 
 * `sosreport` utility present on the remote host, installed if missing.
-* `rsync` utility present on the controller, **not installed** if missing.
 
 Role Variables
 --------------
